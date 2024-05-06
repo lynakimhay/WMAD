@@ -1,12 +1,14 @@
 
-function getPen() {
-
-    // == Using fetch api to get single pen and replace the below pen variable
-    let pen = { id: 1, name: "Pen 1", color: "red" };
+ async function getPen() {
+  const response = await fetch(' https://pens-api.vercel.app/api/pens/2');
+  const pens = await response.json();
+  console.log(pens);
+    // // == Using fetch api to get single pen and replace the below pen variable
+    // let pen = { id: 2, name: "Pen 2", color: "green" };
     // ===
     const penListDiv = document.getElementById("single-pen");
 
-    const penElement = createPenElement(pen);
+    const penElement = createPenElement(pens);
     penListDiv.appendChild(penElement);
 
 }

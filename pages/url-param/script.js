@@ -1,8 +1,13 @@
+const params = window.location.search;
+const urlparams = new URLSearchParams(params);
+const name = urlparams.get("name");
+const ages = urlparams.get("age");
+const Class = urlparams.get("my-class");
 const theName = document.getElementById("name");
 const age = document.getElementById("age");
 const myClass = document.getElementById("class");
 
 
-theName.innerText = "aaa"; //  using URL parameter to get value and replace "aaa"
-age.innerText = 2222; //  using URL parameter to get value and replace 2222
-myClass.innerText = "cc"; //  using URL parameter to get value and replace "cc"
+theName.innerText = name;
+age.innerText = ages;  
+myClass.innerText = Class; 
